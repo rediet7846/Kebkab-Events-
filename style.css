@@ -8,8 +8,8 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    color: #FFD700;
+    background-color: #FFD700;
 }
 
 /* Header and Nav (Flexbox) */
@@ -53,7 +53,7 @@ nav ul li a {
     background-size: cover;          /* Key: covers entire area */
     background-position: center;     /* Centers the important part */
     background-repeat: no-repeat;
-    background-color: #f0f0f0;       /* Fallback */
+    background-color: #FFD700;       /* Fallback */
 }
 .hero-image {
     position: absolute;
