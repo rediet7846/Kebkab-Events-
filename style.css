@@ -49,11 +49,12 @@ nav ul li a {
 .hero {
     position: relative;
     width: 100%;
-    min-height: 70vh;                /* Takes at least 70% of viewport height – looks grand on desktop & mobile */
-    overflow: hidden;                /* Prevents image overflow */
-    background-color: #f0f0f0;       /* Fallback color if image fails */
+    min-height: 70vh;
+    background-size: cover;          /* Key: covers entire area */
+    background-position: center;     /* Centers the important part */
+    background-repeat: no-repeat;
+    background-color: #f0f0f0;       /* Fallback */
 }
-
 .hero-image {
     position: absolute;
     top: 0;
