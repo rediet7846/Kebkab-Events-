@@ -329,3 +329,138 @@ footer::before {
         font-size: clamp(2.8rem, 10vw, 4.5rem);
     }
 }
+/* Events & Packages Section */
+.events-intro, .packages-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.events-intro h1, .packages-section h2 {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+}
+
+.tabs-section {
+    padding: 0 2rem 4rem;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.6rem;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background: #d4af37;
+    color: #111;
+}
+
+.tab-content {
+    display: none;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Packages Cards */
+.packages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.package-card {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 340px;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.package-card:hover {
+    transform: translateY(-12px);
+}
+
+.popular {
+    border-color: #d4af37;
+    background: rgba(212,175,55,0.1);
+}
+
+.popular-tag {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #d4af37;
+    color: #111;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.package-card h3 {
+    font-size: 2.2rem;
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.package-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.package-card ul li {
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+.package-card ul li::before {
+    content: "✓ ";
+    color: #d4af37;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .packages {
+        flex-direction: column;
+        align-items: center;
+    }
+}
