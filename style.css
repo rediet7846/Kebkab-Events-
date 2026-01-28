@@ -8,13 +8,13 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #FFD700;
-    background-color: #FFD700;
+    color: #F7E7CE;
+    background-color: #F7E7CE;
 }
 
 /* Header and Nav (Flexbox) */
 header {
-    background-color: #FFD700 /* Dark green for Orthodox theme */
+    background-color: #F7E7CE /* Dark green for Orthodox theme */
     color: white;
 }
 
