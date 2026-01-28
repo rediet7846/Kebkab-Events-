@@ -30,7 +30,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 100, 0, 0.7);     /* Semi-transparent dark green – matches theme */
+    background: #804A00;     /* Semi-transparent dark green – matches theme */
     backdrop-filter: blur(8px);           /* Nice glass effect (supported in modern browsers) */
     z-index: 1000;                        /* Above everything */
     padding: 1rem 0;
@@ -79,7 +79,7 @@ main section:not(.hero) {
 
 /* Footer – also overlay */
 footer {
-    background: rgba(0, 100, 0, 0.8);
+    background: #804A00;
     color: white;
     text-align: center;
     padding: 1.5rem;
