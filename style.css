@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Reset & Base Styles
+   Reset & Global Styles
    ========================================================================== */
 * {
     margin: 0;
@@ -10,30 +10,30 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
-    color: #fff;                    /* Default white text for dark background */
+    color: #fff;
 }
 
-/* Full-page background image (fits everything) */
+/* Full-viewport background image (picture fits everything) */
 body.full-bg-page {
     min-height: 100vh;
-    background-image: url('photo_2026-01-28_10-04-33.jpg');
+    background-image: url('../images/hero.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;   /* Optional subtle parallax; remove if issues on mobile */
+    background-attachment: fixed; /* Optional: subtle parallax */
 }
 
-/* Dark overlay for readability across the entire page */
+/* Dark overlay for text readability */
 body.full-bg-page::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);  /* Adjust 0.45–0.65 for darkness */
+    background: rgba(0, 0, 0, 0.55);
     z-index: -2;
 }
 
 /* ==========================================================================
-   Header (Transparent / Fixed)
+   Header (Transparent & Fixed)
    ========================================================================== */
 header {
     position: fixed;
@@ -41,8 +41,8 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 1rem 0;
-    background: transparent;        /* Fully transparent – image shows through */
+    padding: 1.2rem 0;
+    background: transparent;
 }
 
 nav {
@@ -72,198 +72,30 @@ nav ul li a {
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
 }
 
 nav ul li a:hover {
-    color: #98fb98;                 /* Light green hover */
+    color: #98fb98; /* Light green hover */
     background: rgba(255,255,255,0.12);
     border-radius: 6px;
 }
 
 /* ==========================================================================
-   Hero Section (Full viewport height for impact)
+   General Hero/About Sections
    ========================================================================== */
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.hero-text {
-    max-width: 90%;
-    padding: 2rem;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
-}
-
-.hero-text h1 {
-    font-size: clamp(2.8rem, 8vw, 5rem);
-    margin-bottom: 1rem;
-}
-
-.hero-text p {
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
-    margin-bottom: 2rem;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #fff;
-    color: #006400;                 /* Dark green */
-    padding: 0.8rem 2rem;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background-color: #e0ffe0;
-}
-
-/* ==========================================================================
-   Content Sections (Readable cards on dark bg)
-   ========================================================================== */
-main section:not(.hero) {
-    background: rgba(255, 255, 255, 0.92);
-    color: #333;
-    margin: 3rem auto;
-    padding: 2.5rem;
-    max-width: 1100px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-}
-
-h1, h2 {
-    color: #006400;                 /* Dark green headings */
-    margin-bottom: 1.5rem;
-}
-
-/* Tabs (Events page) */
-.tabs {
-    display: flex;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.tab-btn {
-    padding: 0.7rem 1.4rem;
-    background: #ddd;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px 6px 0 0;
-    font-weight: 500;
-}
-
-.tab-btn.active {
-    background: #006400;
-    color: white;
-}
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-.tab-content img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-top: 1rem;
-}
-
-/* Form (Contact page) */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-label {
-    font-weight: bold;
-    margin-top: 0.5rem;
-}
-
-input, textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-}
-
-button[type="submit"] {
-    background: #006400;
-    color: white;
-    padding: 0.9rem;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    margin-top: 1rem;
-}
-
-button[type="submit"]:hover {
-    background: #004d00;
-}
-
-/* ==========================================================================
-   Footer (Semi-transparent to match header style)
-   ========================================================================== */
-footer {
-    background: rgba(0, 100, 0, 0.45);
-    backdrop-filter: blur(8px);
-    color: white;
-    text-align: center;
-    padding: 1.8rem;
-    margin-top: 4rem;
-}
-
-/* ==========================================================================
-   Responsive Design (Mobile-first adjustments)
-   ========================================================================== */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .hero-text h1 {
-        font-size: clamp(2.2rem, 9vw, 3.5rem);
-    }
-
-    main section:not(.hero) {
-        margin: 2rem 1rem;
-        padding: 1.5rem;
-    }
-}
-/* About Section - Matching Kidus Events Layout */
-.about-section {
+.hero, .about-section {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 8rem 2rem 6rem;
+    padding: 8rem 2rem 4rem;
     text-align: center;
 }
 
-.section-header {
+.section-label {
     font-size: 1.4rem;
     color: #d4af37; /* Gold */
     letter-spacing: 8px;
@@ -271,24 +103,23 @@ footer {
     font-weight: 500;
 }
 
-.plus-symbol {
-    margin: 0 1rem;
-}
-
-.about-section h1 {
+h1 {
     font-size: clamp(3rem, 8vw, 5rem);
     color: white;
     margin-bottom: 1rem;
     line-height: 1.1;
 }
 
-.about-section h2 {
+h2 {
     font-size: clamp(1.8rem, 5vw, 2.5rem);
     color: #ffd700; /* Gold */
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     font-weight: 400;
 }
 
+/* ==========================================================================
+   About Page Specific (Matches Kidus Events style)
+   ========================================================================== */
 .content-wrapper {
     display: flex;
     align-items: center;
@@ -326,8 +157,8 @@ footer {
     aspect-ratio: 4 / 5;
 }
 
-/* Gold Button - Matches the example */
-.gold-btn {
+/* Gold Button */
+.gold-btn, .btn {
     display: inline-block;
     background: linear-gradient(135deg, #d4af37, #b8972e);
     color: #1a1a1a;
@@ -338,16 +169,121 @@ footer {
     font-size: 1.2rem;
     margin-top: 2rem;
     box-shadow: 0 5px 20px rgba(212,175,55,0.5);
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 
-.gold-btn:hover {
+.gold-btn:hover, .btn:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 30px rgba(212,175,55,0.7);
 }
 
-/* Mobile Adjustments */
+/* ==========================================================================
+   Content Cards (for non-hero sections)
+   ========================================================================== */
+main section:not(.hero):not(.about-section) {
+    background: rgba(255, 255, 255, 0.92);
+    color: #333;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    max-width: 1100px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+/* ==========================================================================
+   Tabs (Events page)
+   ========================================================================== */
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    padding: 0.7rem 1.4rem;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px 6px 0 0;
+    font-weight: 500;
+}
+
+.tab-btn.active {
+    background: #006400;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* ==========================================================================
+   Form (Contact page)
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+button[type="submit"] {
+    background: #006400;
+    color: white;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background: rgba(0, 100, 0, 0.45);
+    backdrop-filter: blur(8px);
+    color: white;
+    text-align: center;
+    padding: 1.8rem;
+    margin-top: 4rem;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
 @media (max-width: 992px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     .content-wrapper {
         flex-direction: column;
         text-align: center;
@@ -355,5 +291,15 @@ footer {
 
     .text-column {
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero, .about-section {
+        padding: 7rem 1.5rem 3rem;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 9vw, 4rem);
     }
 }
